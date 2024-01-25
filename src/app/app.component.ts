@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import * as QRCode from 'qrcode';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'App';
+  title = 'Text to QrCode Generator';
+
+
+  constructor(){
+
+  }
+  public qrcode: any 
+  @Input() public qrcodetext: string = "42"
+
+    generateQrCode(){
+       this.qrcode = this.qrcodetext
+    }
+
+
 }
